@@ -8,16 +8,30 @@ import { Component } from '@angular/core';
 
 export class Tab1Page {
 
-  // Dit is een javascript-object
-  private cardContent = { subtitle: 'Donald Duck',
-                          title   : 'Zwarte Magica',
-                          image   : './assets/images/zwarte-magica.png',
-                          content : 'Zij wil altijd het geluksdubbeltje van Dagobert Duck stelen. Dit is niet correct...'};
-
-  private cardContent01 = { subtitle: 'Donald Duck',
-                          title   : 'Zware Jongens',
-                          image   : './assets/images/zware-jongens.gif',
-                          content : 'Zij willen altijd de kluis van Dagobert Duck stelen.'};
-
-
+  private cardContent = [
+                          {
+                            subtitle: 'Donald Duck',
+                            title   : 'Zwarte Magica',
+                            image   : './assets/images/zwarte-magica.png',
+                            content : 'Zij wil altijd het geluksdubbeltje van Dagobert Duck stelen. Dit is niet correct...'
+                          },
+                          {
+                            subtitle: 'Donald Duck',
+                            title   : 'Zware Jongens',
+                            image   : './assets/images/zware-jongens.gif',
+                            content : 'Zij willen altijd de kluis van Dagobert Duck stelen.'
+                          },
+                          {
+                            subtitle: 'Donald Duck',
+                            title: 'Kwik Kwek Kwak',
+                            image: './assets/images/kwikkwekkwak.png',
+                            content: 'Kwik kwek en kwak zijn de neefjes van Donald Duck en zijn altijd in voor avontuur.'
+                          },
+                          {
+                            subtitle: 'Donald Duck',
+                            title: 'Guus Geluk',
+                            image: './assets/images/guus-geluk.png',
+                            content: 'Guus Geluk is de geluksoom van Donald Duck.'
+                          }
+                        ];
 }
