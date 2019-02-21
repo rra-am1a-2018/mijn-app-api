@@ -7,20 +7,21 @@
 </ion-header>
 
 <ion-content>
+  
     <div *ngFor="let card of cardContent">
       <ion-card>
           <ion-card-header>
           <ion-card-subtitle>{{card.subtitle}}</ion-card-subtitle>
-            <ion-card-title></ion-card-title>
+            <ion-card-title>{{card.title}}</ion-card-title>
           </ion-card-header>
-          <ion-img src=""></ion-img>
+          <ion-img src="{{card.image}}"></ion-img>
           <ion-card-content>
-            
+            {{card.content}}
           </ion-card-content>
         </ion-card>
     </div>
 
-    <ion-card>
+    <!-- <ion-card>
       <ion-card-header>
       <ion-card-subtitle>{{cardContent[0].subtitle}}</ion-card-subtitle>
         <ion-card-title>{{cardContent[0].title}}</ion-card-title>
@@ -62,5 +63,5 @@
         <ion-card-content>
           {{cardContent[3].content}}
         </ion-card-content>
-      </ion-card>
+      </ion-card> -->
 </ion-content>
