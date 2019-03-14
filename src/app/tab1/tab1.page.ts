@@ -9,38 +9,13 @@ import { HttpClient } from '@angular/common/http';
 
 export class Tab1Page {
 
-  // private cardContent = [
-  //                         {
-  //                           subtitle: 'Donald Duck',
-  //                           title   : 'Zwarte Magica',
-  //                           image   : './assets/images/zwarte-magica.png',
-  //                           content : 'Zij wil altijd het geluksdubbeltje van Dagobert Duck stelen. Dit is niet correct...'
-  //                         },
-  //                         {
-  //                           subtitle: 'Donald Duck',
-  //                           title   : 'Zware Jongens',
-  //                           image   : './assets/images/zware-jongens.gif',
-  //                           content : 'Zij willen altijd de kluis van Dagobert Duck stelen.'
-  //                         },
-  //                         {
-  //                           subtitle: 'Donald Duck',
-  //                           title: 'Kwik Kwek Kwak',
-  //                           image: './assets/images/kwikkwekkwak.png',
-  //                           content: 'Kwik kwek en kwak zijn de neefjes van Donald Duck en zijn altijd in voor avontuur.'
-  //                         },
-  //                         {
-  //                           subtitle: 'Donald Duck',
-  //                           title: 'Guus Geluk',
-  //                           image: './assets/images/guus-geluk.png',
-  //                           content: 'Guus Geluk is de geluksoom van Donald Duck.'
-  //                         }
-  //                       ];
+  private cardContent: any[] = [];
 
-  private cardContent: any = [];
-
-    public constructor(private http: HttpClient) {
-      this.http.get('http://www.donaldduck.api.io/index.php', {responseType: 'json'}).subscribe((data: any[]) => {
+  constructor(private http: HttpClient) {
+    this.http.get('http://www.donaldduck.api.io', {responseType: 'json'}).subscribe((data: any[]) => {
+        // console.log(data);
         this.cardContent = data;
-      });
-    }
+    });
+  }
+
 }
