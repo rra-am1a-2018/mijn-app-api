@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Open movie database</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div *ngFor="let movie of omdbContent">
+    <ion-card>
+        <ion-card-header>
+        <ion-card-subtitle>{{movie.Actors}}</ion-card-subtitle>
+          <ion-card-title>{{movie.Country}}</ion-card-title>
+        </ion-card-header>
+        <ion-img src="{{movie.Poster}}"></ion-img>
+        <ion-card-content>
+          {{movie.Plot}}
+        </ion-card-content>
+      </ion-card>
+  </div>
+</ion-content>

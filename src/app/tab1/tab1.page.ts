@@ -13,7 +13,7 @@ export class Tab1Page {
 
   constructor(private http: HttpClient) {
     this.http.get('http://www.donaldduck.api.io', {responseType: 'json'}).subscribe((data: any[]) => {
-        // console.log(data);
+        console.log(data);
         this.cardContent = data;
     });
   }
