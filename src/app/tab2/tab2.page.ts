@@ -31,9 +31,7 @@ export class Tab2Page implements OnInit {
       console.log(data);
       this.omdbContent = data.Search;
     });
-  }
-
-  
+  } 
 
   ngOnInit() {
   }
