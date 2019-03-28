@@ -40,7 +40,6 @@ export class Tab2Page implements OnInit {
   fetch_data_from_api() {
     this.http.get(this.url_omdb + this.search_keyword + this.apikey, {responseType: 'json'}).subscribe((data: omdbapiObject) => {
       console.log(data);
-      this.omdbContent = data.Search;
     });
   }
 
@@ -49,7 +48,8 @@ export class Tab2Page implements OnInit {
     var search_id = (<HTMLInputElement>search_word).value;
     this.http.get('http://www.omdbapi.com/?i=' + search_id + '&plot=full&apikey=47911a2a', {responseType: 'json'}).subscribe((data: object) => {
       console.log(data);
-      
+      this.omdbContent = [];
+      this.omdbContent[0] = data;
     });
   }
 
