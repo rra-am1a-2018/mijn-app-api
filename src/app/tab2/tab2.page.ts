@@ -40,6 +40,7 @@ export class Tab2Page implements OnInit {
   fetch_data_from_api() {
     this.http.get(this.url_omdb + this.search_keyword + this.apikey, {responseType: 'json'}).subscribe((data: omdbapiObject) => {
       console.log(data);
+      this.omdbContent = data.Search;
     });
   }
 
