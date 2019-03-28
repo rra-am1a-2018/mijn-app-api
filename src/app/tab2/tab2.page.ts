@@ -8,8 +8,6 @@ interface omdbapiObject {
   Response: boolean;
 }
 
-
-
 @Component({
   selector: 'app-tab2',
   templateUrl: './tab2.page.html',
@@ -31,7 +29,14 @@ export class Tab2Page implements OnInit {
       console.log(data);
       this.omdbContent = data.Search;
     });
-  } 
+  }
+  
+  search() {
+    var search_word = document.getElementById("inputSearch").value;
+    console.log("Hoi" + search_word);
+    this.search_keyword = search_word;
+
+  }
 
   ngOnInit() {
   }
