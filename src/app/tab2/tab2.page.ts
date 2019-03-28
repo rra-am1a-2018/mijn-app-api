@@ -42,6 +42,10 @@ export class Tab2Page implements OnInit {
     });
   }
 
+  ionBarSearch() {
+    console.log("Hoi");
+  }
+
   ngOnInit() {
   }
 
