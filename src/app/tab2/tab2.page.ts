@@ -39,7 +39,8 @@ export class Tab2Page implements OnInit {
   // Deze method zorgt voor het ophalen van de data van de omdbap.com site
   fetch_data_from_api() {
     this.http.get(this.url_omdb + this.search_keyword + this.apikey, {responseType: 'json'}).subscribe((data: omdbapiObject) => {
-      console.log(data);
+      // console.log(data);
+      this.omdbContent = data.Search;
     });
   }
 
