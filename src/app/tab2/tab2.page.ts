@@ -18,7 +18,7 @@ export class Tab2Page implements OnInit {
   omdbContent: object[] = [];
 
   url_omdb: string = 'http://www.omdbapi.com/?s=';
-  search_keyword: string = "chainsaw";
+  search_keyword: string = "tarzan";
   apikey: string = '&apikey=47911a2a';
 
 
@@ -32,9 +32,18 @@ export class Tab2Page implements OnInit {
   }
   
   search() {
-    var search_word = document.getElementById("inputSearch").value;
-    console.log("Hoi" + search_word);
-    this.search_keyword = search_word;
+    var search_word: HTMLElement = document.getElementById("inputSearch");
+    this.search_keyword = (<HTMLInputElement>search_word).value;
+    console.log(this.search_keyword);
+
+    this.http.get(this.url_omdb + this.search_keyword + this.apikey, {responseType: 'json'}).subscribe((data: omdbapiObject) => {
+      console.log(data);
+      this.omdbContent = data.Search;
+    });
+
+
+    // console.log("Hoi" + search_word);
+    // this.search_keyword = search_word;
 
   }
 

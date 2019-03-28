@@ -5,8 +5,10 @@
 </ion-header>
 
 <ion-content padding>
+  
   <ion-input type="text" id="inputSearch"></ion-input>
   <ion-button expand="full" color="warning" (click)="search()">Voer een titel in</ion-button>
+  
   <div *ngFor="let movie of omdbContent">
     <ion-card>
         <ion-card-header>
