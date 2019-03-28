@@ -21,6 +21,8 @@ export class Tab2Page implements OnInit {
   search_keyword: string = "tarzan";
   apikey: string = '&apikey=47911a2a';
 
+  // http://www.omdbapi.com/?i=tt0324216&plot=full&apikey=47911a2a
+
 
   constructor(private http: HttpClient) {
     // console.log(this.url_omdb + this.search_keyword + this.apikey);    
@@ -42,8 +44,21 @@ export class Tab2Page implements OnInit {
     });
   }
 
+  fetch_data_from_api_by_id() {
+    var search_word: HTMLElement = document.getElementById("inputSearch");
+    var search_id = (<HTMLInputElement>search_word).value;
+    this.http.get('http://www.omdbapi.com/?i=' + search_id + '&plot=full&apikey=47911a2a', {responseType: 'json'}).subscribe((data: object) => {
+      console.log(data);
+      
+    });
+  }
+
   ionBarSearch() {
     console.log("Hoi");
+    var search_word: HTMLElement = document.getElementById("ionSearchBar");
+    console.log(search_word);
+    this.search_keyword = (<HTMLInputElement>search_word).value;
+    this.fetch_data_from_api();
   }
 
   ngOnInit() {
