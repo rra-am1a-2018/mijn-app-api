@@ -54,12 +54,17 @@ export class Tab2Page implements OnInit {
     });
   }
 
+  
   ionBarSearch() {
     console.log("Hoi");
     var search_word: HTMLElement = document.getElementById("ionSearchBar");
     console.log(search_word);
     this.search_keyword = (<HTMLInputElement>search_word).value;
     this.fetch_data_from_api();
+  }
+
+  test(test: string) {
+    console.log(test);
   }
 
   ngOnInit() {

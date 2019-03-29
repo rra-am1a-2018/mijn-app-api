@@ -5,22 +5,23 @@
 </ion-header>
 
 <ion-content padding>
-  
   <ion-input type="text" id="inputSearch"></ion-input>
-  <ion-button expand="full" color="warning" (click)="fetch_data_from_api_by_id()">Voer een titel in</ion-button>
-
-  <ion-searchbar id="ionSearchBar" (ionInput)="ionBarSearch()"></ion-searchbar>
+    <ion-button expand="full" color="warning" (click)="fetch_data_from_api_by_id()">Voer een titel in</ion-button>
+    
+    <ion-searchbar id="ionSearchBar" (ionInput)="ionBarSearch()"></ion-searchbar>
+      
+    <div *ngFor="let movie of omdbContent">
+      <ion-card>
+          <ion-card-header>
+          <ion-card-subtitle>Releasedatum: {{movie.Year}}</ion-card-subtitle>
+            <ion-card-title>{{movie.Title}}</ion-card-title>
+          </ion-card-header>
+          <ion-img src="{{movie.Poster}}"></ion-img>
+          <ion-card-content>
+            IMDB-ID: {{movie.imdbID}}
+            <ion-button expand="full" color="warning" (click)="test(movie.imdbID)">Details</ion-button>
   
-  <div *ngFor="let movie of omdbContent">
-    <ion-card>
-        <ion-card-header>
-        <ion-card-subtitle>Releasedatum: {{movie.Year}}</ion-card-subtitle>
-          <ion-card-title>{{movie.Title}}</ion-card-title>
-        </ion-card-header>
-        <ion-img src="{{movie.Poster}}"></ion-img>
-        <ion-card-content>
-          IMDB-ID: {{movie.imdbID}}
-        </ion-card-content>
-      </ion-card>
-  </div>
+          </ion-card-content>
+        </ion-card>
+    </div>
 </ion-content>
